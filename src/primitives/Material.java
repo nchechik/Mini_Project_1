@@ -14,16 +14,20 @@ public class Material {
         _Kt = 0;
         _n = 1;
     }
-    public Material(Material material);
+
+    public Material(Material material) {
+
+    }
+
     // ***************** Getters/Setters ********************** //
-    public double getKd();
-    public double getKs();
-    public double getKr();
-    public double getKt();
-    public double getN();
-    public void setKd(double _Kd);
-    public void setKs(double _Ks);
-    public void setKr(double _Kr);
-    public void setKt(double _Kt);
-    public void setN (double _n);
+    public double getKd(){return this._Kd;};
+    public double getKs(){return this._Ks;};
+    public double getKr(){return this._Kr;};
+    public double getKt(){return this._Kt;};
+    public double getN(){return this._n;};
+    public void setKd(double _Kd){this._Kd=_Kd;};
+    public void setKs(double _Ks){this._Ks=_Ks;};
+    public void setKr(double _Kr){this._Kr=_Kr;};
+    public void setKt(double _Kt){this._Kt=_Kt;};
+    public void setN (double _n) {this._n=_n;};
 }
