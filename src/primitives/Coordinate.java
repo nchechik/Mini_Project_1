@@ -13,16 +13,23 @@ public class Coordinate {
 
     // ***************** Getters/Setters ********************** //
     public double getCoordinate() {
-        return 0;
+        return _coordinate;
     }
 
     public void setCoordinate(double coordinate){this._coordinate=coordinate;}
 
     // ***************** Administration ******************** //
-    public int compareTo(Coordinate coordinate);
+
+    public int compareTo(Coordinate coordinate)
+    {
+        if(this._coordinate <coordinate._coordinate)return -1;
+        if(this._coordinate>coordinate._coordinate)return 1;
+        if(this._coordinate==coordinate._coordinate) return 0;
+        return 0;
+    };
 
     // ***************** Operations ******************** //
-    public void add(Coordinate coordinate);
+    public void add(Coordinate coordinate){this._coordinate+=coordinate._coordinate;}
 
-    public void subtract(Coordinate coordinate);
+    public void subtract(Coordinate coordinate){this._coordinate-=coordinate._coordinate;};
 }

@@ -1,4 +1,5 @@
 package com.company;
+
 /*
 *1. implementation of:
 a. primitives:
@@ -26,7 +27,6 @@ a. ray geometry inter- sections.
 b. geometries unit testing.
  */
 public class Main {
-
     public static void main(String[] args) {
 	// write your code here point
     }
