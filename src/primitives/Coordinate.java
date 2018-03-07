@@ -1,3 +1,4 @@
+package primitives;
 public class Coordinate {
 
 
@@ -8,12 +9,14 @@ public class Coordinate {
 
     public Coordinate(double coordinate){this._coordinate=coordinate;};
 
-    public Coordinate(Coordinate coordinate)
+    public Coordinate(Coordinate coordinate){this._coordinate=coordinate._coordinate;};
 
     // ***************** Getters/Setters ********************** //
-    public double getCoordinate();
+    public double getCoordinate() {
+        return 0;
+    }
 
-    public void setCoordinate(double coordinate)
+    public void setCoordinate(double coordinate){this._coordinate=coordinate;}
 
     // ***************** Administration ******************** //
     public int compareTo(Coordinate coordinate);
