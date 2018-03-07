@@ -1,25 +1,29 @@
 package com.company;
 /*
-* Mini- project in Software Engineering
-
- Point3D compareTo
- Point3D toString
- Point3D add
- Point3D subtract
- Point3D distance
- Vector Add
- Vector Substruct
- Vector Scaling
- Vector Dot product
- Vector Length
- Vector Normalize
- Vector Cross product
- Camera
- Triangle intersection
- Triangle getNormal
- Sphere intersection
- Sphere getNormal
- Plane intersection
+*1. implementation of:
+a. primitives:
+ Coordinate
+ Material
+ Point2D
+ Point3D
+ Vector
+ Ray
+b. geometries:
+ Geometry
+ FlatGeometry
+ RadialGeometry
+ Plane
+ Triangle
+ Cylinder
+ Sphere
+2. implementation of:
+a. vector operations.
+b. camera class, and ray construction function.
+c. primitives and camera unit testing.
+3. refactoring the geometry package.
+implementation of:
+a. ray geometry inter- sections.
+b. geometries unit testing.
  */
 public class Main {
 
