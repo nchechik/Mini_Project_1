@@ -1,4 +1,5 @@
 package primitives;
+
 public class Material {
     private double _Kd; // Diffusion attenuation coefficient
     private double _Ks; // Specular attenuation coefficient

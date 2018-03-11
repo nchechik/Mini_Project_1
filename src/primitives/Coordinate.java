@@ -1,15 +1,24 @@
 package primitives;
-public class Coordinate {
+
+import com.sun.istack.internal.NotNull;
+
+public class Coordinate implements Comparable<Coordinate> {
 
 
-    private double _coordinate;
+    private double _coordinate=0.0;
 
     // ***************** Constructors ********************** //
     public Coordinate(){this._coordinate=0;};
 
-    public Coordinate(double coordinate){this._coordinate=coordinate;};
+    public Coordinate(double coordinate)
+    {
+        this._coordinate=coordinate;
+    }
 
-    public Coordinate(Coordinate coordinate){this._coordinate=coordinate._coordinate;};
+    public Coordinate(@NotNull Coordinate coordinate)
+    {
+        this._coordinate=coordinate._coordinate;
+    };
 
     // ***************** Getters/Setters ********************** //
     public double getCoordinate() {
@@ -19,13 +28,12 @@ public class Coordinate {
     public void setCoordinate(double coordinate){this._coordinate=coordinate;}
 
     // ***************** Administration ******************** //
-
+    // lower value comes first in sorting
+    @Override
     public int compareTo(Coordinate coordinate)
     {
-        if(this._coordinate <coordinate._coordinate)return -1;
-        if(this._coordinate>coordinate._coordinate)return 1;
-        if(this._coordinate==coordinate._coordinate) return 0;
-        return 0;
+        return Double.compare(this._coordinate, coordinate._coordinate);
+
     };
 
     // ***************** Operations ******************** //

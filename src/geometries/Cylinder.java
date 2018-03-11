@@ -1,10 +1,24 @@
 package geometries;
-public class Cylinder {
+import com.sun.istack.internal.NotNull;
+import primitives.Point3D;
+import primitives.Vector;
+
+public class Cylinder extends RadialGeometry {
     private Point3D _axisPoint;
     private Vector _axisDirection;
     // ***************** Constructors ********************** //
-    public Cylinder();
-    public Cylinder(Cylinder cylinder);
+    public Cylinder()
+    {
+        this._axisPoint = new Point3D();
+        this._axisDirection = new Vector();
+
+    }
+    public Cylinder(@NotNull Cylinder cylinder)
+    {
+        super(cylinder);
+        this._axisDirection=cylinder._axisDirection;
+        this._axisPoint=cylinder._axisPoint;
+    };
     public Cylinder(double radius, Point3D axisPoint, Vector axisDirection);
     // ***************** Getters/Setters ********************** //
     public Point3D getAxisPoint();
