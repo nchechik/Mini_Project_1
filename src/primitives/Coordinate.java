@@ -4,7 +4,7 @@ import com.sun.istack.internal.NotNull;
 
 public class Coordinate implements Comparable<Coordinate> {
 
-
+// u see it??????????????????????
     private double _coordinate=0.0;
 
     // ***************** Constructors ********************** //
