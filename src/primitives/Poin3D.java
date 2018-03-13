@@ -1,9 +1,8 @@
 package primitives;
 
 import com.sun.istack.internal.NotNull;
-
-public class Point3D extends Point2D{
-    private Coordinate _z;
+class Point3D extends Point2D{
+    protected Coordinate _z;
     // ***************** Constructors ********************** //
     public Point3D(){super();_z=new Coordinate();};
     public Point3D(@NotNull Coordinate x, @NotNull Coordinate y, @NotNull Coordinate z){super(x,y);_z=new Coordinate(z);};
@@ -40,7 +39,7 @@ public class Point3D extends Point2D{
      * SEE ALSO
      * getDistanceFromOrigin(),
      * **************************************************/
-    public int compareTo((@NotNull Point3D point3D)
+    public int compareTo(@NotNull Point3D point3D)
     {
 
 
@@ -106,20 +105,44 @@ public class Point3D extends Point2D{
     }
     // ***************** Operations ******************** //
     @NotNull
-    /* * * * *  * * * */   public void add(Vector vector)
+    /* * * * *  * * * */   public void add(@NotNull Vector vector)
     {
        this._x.setCoordinate(this._x.getCoordinate()+ vector.getHead()._x.getCoordinate());
        this._y.setCoordinate(this._y.getCoordinate()+ vector.getHead()._y.getCoordinate());
        this._z.setCoordinate(this._z.getCoordinate()+ vector.getHead()._z.getCoordinate());
 
     };
-    /* * * * *  * * * */   public void subtract(Vector vector)
+    @NotNull
+    /* * * * *  * * * */   public void add(@NotNull Point3D point3D)
+    {
+        this._x.setCoordinate(this._x.getCoordinate()+point3D._x.getCoordinate());
+        this._y.setCoordinate(this._y.getCoordinate()+point3D._y.getCoordinate());
+        this._z.setCoordinate(this._z.getCoordinate()+point3D._z.getCoordinate());
+
+    };
+    /* * * * *  * * * */   public void subtract(@NotNull Vector vector)
     {
         this._x.setCoordinate(this._x.getCoordinate()- vector.getHead()._x.getCoordinate());
         this._y.setCoordinate(this._y.getCoordinate()- vector.getHead()._y.getCoordinate());
         this._z.setCoordinate(this._z.getCoordinate()- vector.getHead()._z.getCoordinate());
 
     };
+       public void subtract(@NotNull Point3D point3D)
+    {
+        this._x.setCoordinate(this._x.getCoordinate()-point3D._x.getCoordinate());
+        this._y.setCoordinate(this._y.getCoordinate()-point3D._y.getCoordinate());
+        this._z.setCoordinate(this._z.getCoordinate()-point3D._z.getCoordinate());
+
+    };
+    @NotNull
+    public static Point3D subtract(@NotNull Point3D point3D_1, @NotNull Vector vector_2)
+    {
+        double new_x = point3D_1._x.getCoordinate() - vector_2.getHead()._x.getCoordinate();
+        double new_y = point3D_1._y.getCoordinate() - vector_2.getHead()._y.getCoordinate();
+        double new_z = point3D_1._z.getCoordinate() - vector_2.getHead()._z.getCoordinate();
+
+        return new Point3D(new_x, new_y, new_z);
+    }
     /* * * * *  * * * */   public double distance(@NotNull  Point3D point)
     {
        double xPart =Math.pow(this._x.getCoordinate()-point.getX().getCoordinate(),2);
@@ -129,4 +152,12 @@ public class Point3D extends Point2D{
        return Math.sqrt(xPart + yPart + zPart);
 
     };
+    // ***************** static class functions ******************** //
+
+    @NotNull
+    public static Point3D getOrigin()
+    {
+        return new Point3D(0, 0, 0);
+    }
+
 }
